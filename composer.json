@@ -1,0 +1,10 @@
+{
+    "require": {
+        "slim/slim": "~2.6",
+        "twig/twig": "~1.18",
+		"propel/propel": "~2.0@dev"
+    },
+    "autoload":{
+    	"psr-0":{"":"app/lib/"}
+    }
+}
