@@ -1,0 +1,22 @@
+{% extends "layout.html.twig" %}
+
+{% block page %}
+<table class="table">
+	<tr>
+		<th>Nom</th>
+		<th>Prenom</th>
+	</tr>
+	{% for aut in Authors %}
+		<tr>
+        	<td>{{ aut.firstName}}</td>
+        	<td>{{ aut.lastName}}</td>
+        	<td style="width: 150px;">
+        		<div class="btn-group" role="group">
+	        		<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></button>
+	        		<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+        		</div>
+        	</td>
+    	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

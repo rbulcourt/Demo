@@ -1,0 +1,29 @@
+<div id="addBook" style="border-style: solid;">
+			<label>Ajouter un livre</label>
+			<form action="addBook" method="post">
+			    <div>
+			        <label for="titre">Titre :</label>
+			        <input type="text" id="titre" name="titre" />
+			    </div> 
+			    <div>
+			        <select name="author">
+						<?php
+						foreach($authors as $author) {
+							echo "<option value=".$author->getId()."----".$author->getLastName().">$author</option>";
+						}
+						?>
+					</select>
+					</select>
+					<select name="publisher">
+						<?php
+							foreach($publishers as $publisher) {
+							echo "<option value=".$publisher->getId()."----".$publisher->getName().">$publisher</option>";
+						}
+						?>
+					</select>
+			    </div>  
+			    <div class="button">
+			        <button type="submit">Ajouter</button>
+			    </div>
+			</form>
+		</div>

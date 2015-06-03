@@ -2,7 +2,8 @@
     "require": {
         "slim/slim": "~2.6",
         "twig/twig": "~1.18",
-		"propel/propel": "~2.0@dev"
+		"propel/propel": "~2.0@dev",
+        "slim/views": "0.1.*"
     },
     "autoload":{
     	"psr-0":{"":"app/lib/"}
