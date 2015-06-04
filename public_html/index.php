@@ -18,7 +18,7 @@
 	$app->run();
 ?>
 
-<?php 
+<?php
 
 	$authors = \Demo\AuthorQuery::create()
 		->find();
