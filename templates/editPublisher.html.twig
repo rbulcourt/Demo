@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block page %}
+    <label>Modifier un éditeur</label>
+    <form action="savePublisher" method="post">
+        <div>
+            <input type="hidden" id="id" name="id" value="{{Publisher.id}}"/>
+        </div>
+        <div class="input-group" style="width: 15%; margin-top: 4px;">
+            <span class="input-group-addon" id="basic-addon1" style="width: 135px;">Nouveau Nom</span>
+            <input type="text" class="form-control" id="nom" name="nom" value="{{Publisher.name}}" onFocus="javascript:this.value=''"/>
+        </div>
+        <div class="button" style="margin-top: 4px;">
+            <button type="submit" class="btn btn-default">Modifier</button>
+        </div>
+    </form>
+{% endblock %}

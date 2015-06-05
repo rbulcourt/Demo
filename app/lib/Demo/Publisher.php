@@ -16,5 +16,7 @@ use Demo\Base\Publisher as BasePublisher;
  */
 class Publisher extends BasePublisher
 {
-
+	public function __toString(){
+		return $this->getName();
+	}
 }

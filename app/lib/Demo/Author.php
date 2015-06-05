@@ -16,5 +16,7 @@ use Demo\Base\Author as BaseAuthor;
  */
 class Author extends BaseAuthor
 {
-
+	public function __toString(){
+		return $this->getFirstName().' '.$this->getLastName();
+	}
 }

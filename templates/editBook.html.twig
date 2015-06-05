@@ -1,0 +1,45 @@
+{% extends "layout.html.twig" %}
+
+{% block page %}
+    <label>Modifier un livre</label>
+    <form action="saveBook" method="post">
+        <div>
+            <input type="hidden" id="id" name="id" value="{{Book.id}}"/>
+        </div>
+        <div class="input-group" style="width: 20%; margin-top: 4px;">
+            <span class="input-group-addon" id="basic-addon1" style="width: 135px;">Nouveau Titre</span>
+            <input type="text" class="form-control" id="titre" name="titre" value="{{Book.title}}" onFocus="javascript:this.value=''"/>
+        </div>
+        <div class="input-group" style="width: 20%; margin-top: 4px;">
+            <span class="input-group-addon" id="basic-addon1" style="width: 135px;">Nouveau ISBN</span>
+            <input type="text" class="form-control" id="isbn" name="isbn" value="{{Book.ISBN}}" onFocus="javascript:this.value=''"/>
+        </div>
+        <div>
+
+            <label for="sel1">Auteur</label>
+            <select id="sel1" name="author" class="form-control" style="width: 10%; margin-top: 4px;">
+                {% for aut in authors %}
+                    {% if aut.id == Book.author.id %}
+                        <option value="{{aut.id}}" selected>{{aut.firstName}} {{aut.lastName}}</option>
+                    {% else %}
+                        <option value="{{aut.id}}">{{aut.firstName}} {{aut.lastName}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <label for="sel2">Auteur</label>
+            <select id="sel2" name="publisher" class="form-control" style="width: 10%; margin-top: 4px;">
+                {% for pub in publishers %}
+                    {% if pub.id == Book.publisher.id %}
+                        <option value="{{pub.id}}" name="pubId" selected>{{pub.name}}</option>
+                    {% else %}
+                        <option value="{{pub.id}}" name="pubId">{{pub.name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="button" style="margin-top: 4px;">
+            <button type="submit" class="btn btn-default">Modifier</button>
+        </div>
+    </form>
+
+{% endblock %}

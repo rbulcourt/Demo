@@ -8,12 +8,14 @@ use Demo\PublisherQuery;
 	})->name('Accueil');
 
 	include('authors.php');
+	include('publishers.php');
+	include('books.php');
 
-	$app->post('/addBook', function() use ($app){
+	/*$app->post('/addBook', function() use ($app){
 		$post=$app->request->post();
 		$Book = new Book;
 		$Book->setTitle($post['titre']);
 		//$Book
-	});
+	});*/
 
 ?>
